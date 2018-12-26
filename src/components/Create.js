@@ -6,7 +6,8 @@ class Create extends Component {
 
     constructor() {
         super();
-        this.ref = firebase.firestore().collection('boards');
+        this.ref = firebase.firestore().collection('academy').doc('usuario').collection('documentos');
+
         this.state = {
             title: '',
             description: '',

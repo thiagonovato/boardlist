@@ -15,7 +15,7 @@ class Edit extends Component {
     }
 
     componentDidMount() {
-        const ref = firebase.firestore().collection('boards').doc(this.props.match.params.id);
+        const ref = firebase.firestore().collection('academy').doc('usuario').collection('documentos').doc(this.props.match.params.id);
         ref.get().then((doc) => {
             if (doc.exists) {
                 const board = doc.data();
@@ -42,7 +42,7 @@ class Edit extends Component {
 
         const { title, description, author } = this.state;
 
-        const updateRef = firebase.firestore().collection('boards').doc(this.state.key);
+        const updateRef = firebase.firestore().collection('academy').doc('usuario').collection('documentos').doc(this.state.key);
         updateRef.set({
             title,
             description,
